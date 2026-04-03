@@ -19,6 +19,7 @@
 
 ## Table of Contents
 
+- [Screenshots](#screenshots)
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
@@ -89,6 +90,20 @@ open /Applications/SwiftBar.app
 In Chrome menu bar: **View > Developer > Allow JavaScript from Apple Events**
 
 That's it. You'll see **🤖 S:0% W:0%** in your menu bar within a minute.
+
+---
+
+## Screenshots
+
+<p align="center">
+  <img src="art/screenshot-menubar.png" alt="Menu bar" width="300"><br>
+  <em>Menu bar label showing session and weekly usage at a glance</em>
+</p>
+
+<p align="center">
+  <img src="art/screenshot-dropdown.png" alt="Dropdown" width="320"><br>
+  <em>Dropdown with live percentages, progress bars, and reset countdowns</em>
+</p>
 
 ---
 
