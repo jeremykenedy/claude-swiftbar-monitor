@@ -1,0 +1,5 @@
+.DS_Store
+*.log
+~/.claude/usage-cache.json
+~/.claude/rate-limit.json
+~/.claude/session.txt
