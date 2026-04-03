@@ -9,6 +9,10 @@
 <p align="center">Real-time Claude usage stats in your macOS menu bar -- no API key required.</p>
 
 <p align="center">
+  <strong>⚠️ Usage data is limited by Anthropic's API -- stats refresh every 5 minutes on their end regardless of how often this tool polls.</strong>
+</p>
+
+<p align="center">
     <a href="https://github.com/jeremykenedy/claude-swiftbar-monitor/stargazers"><img src="https://img.shields.io/github/stars/jeremykenedy/claude-swiftbar-monitor?style=flat-square" alt="Stars"></a>
     <a href="https://github.com/jeremykenedy/claude-swiftbar-monitor/blob/main/LICENSE"><img src="https://img.shields.io/github/license/jeremykenedy/claude-swiftbar-monitor?style=flat-square" alt="License"></a>
     <img src="https://img.shields.io/badge/macOS-12%2B-blue?style=flat-square" alt="macOS">
@@ -117,6 +121,8 @@ Then enable JavaScript from Apple Events in Chrome: **View > Developer > Allow J
 ## How It Works
 
 Every minute SwiftBar runs the shell script which uses AppleScript to execute a `fetch()` call in your open Chrome browser against the authenticated `claude.ai/api/organizations/{org_id}/usage` endpoint. The response is cached locally at `~/.claude/usage-cache.json`. No credentials are stored, no tokens are consumed -- it piggybacks on your existing browser session.
+
+> **Note:** Anthropic only refreshes usage data on their end approximately every 5 minutes. Polling more frequently than that will return the same values.
 
 ---
 
