@@ -26,6 +26,7 @@
 - [What It Shows](#what-it-shows)
 - [How It Works](#how-it-works)
 - [Configuration](#configuration)
+- [CLI Commands](#cli-commands)
 - [Troubleshooting](#troubleshooting)
 - [License](#license)
 
@@ -46,50 +47,44 @@
 ## Requirements
 
 - macOS 12 or later
-- [SwiftBar](https://github.com/swiftbar/SwiftBar) installed via `brew install --cask swiftbar`
+- [Homebrew](https://brew.sh) (for one-command install)
 - Google Chrome logged into claude.ai
-- Chrome setting: **View > Developer > Allow JavaScript from Apple Events** must be enabled
+- SwiftBar (installed automatically by `claude-monitor install`)
 
 ---
 
 ## Installation
 
-**1. Install SwiftBar**
+### Via Homebrew (recommended)
 
 ```bash
-brew install --cask swiftbar
+brew tap jeremykenedy/claude-monitor
+brew install claude-monitor
+claude-monitor install
 ```
 
-**2. Clone this repo or download the script**
+That's it. The `claude-monitor install` command handles everything automatically:
+
+- Installs SwiftBar if not already installed
+- Downloads and installs the plugin
+- Configures SwiftBar automatically
+- Enables JavaScript from Apple Events in Chrome
+- Launches SwiftBar
+
+You'll see **🤖** in your menu bar within 60 seconds.
+
+### Manual installation
 
 ```bash
 git clone https://github.com/jeremykenedy/claude-swiftbar-monitor.git
-```
-
-**3. Copy the plugin to your SwiftBar plugins folder**
-
-```bash
+mkdir -p ~/Documents/SwiftBar-plugins
 cp claude-swiftbar-monitor/claude-stats.1m.sh ~/Documents/SwiftBar-plugins/
 chmod +x ~/Documents/SwiftBar-plugins/claude-stats.1m.sh
-```
-
-**4. Set your SwiftBar plugins folder**
-
-```bash
 defaults write com.ameba.SwiftBar PluginDirectory ~/Documents/SwiftBar-plugins
-```
-
-**5. Launch SwiftBar**
-
-```bash
 open /Applications/SwiftBar.app
 ```
 
-**6. Enable JavaScript from Apple Events in Chrome**
-
-In Chrome menu bar: **View > Developer > Allow JavaScript from Apple Events**
-
-That's it. You'll see **🤖 S:0% W:0%** in your menu bar within a minute.
+Then enable JavaScript from Apple Events in Chrome: **View > Developer > Allow JavaScript from Apple Events**
 
 ---
 
@@ -136,6 +131,19 @@ The refresh interval is set by the filename. To change it, rename the script:
 | `claude-stats.5m.sh` | Every 5 minutes |
 
 After renaming, restart SwiftBar.
+
+---
+
+## CLI Commands
+
+After installing via Homebrew, you have a `claude-monitor` command available:
+
+| Command | Description |
+|---------|-------------|
+| `claude-monitor install` | Set up everything and launch |
+| `claude-monitor update` | Update the plugin to latest version |
+| `claude-monitor restart` | Restart SwiftBar |
+| `claude-monitor status` | Show installation status |
 
 ---
 
